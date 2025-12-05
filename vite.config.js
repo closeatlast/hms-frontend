@@ -6,8 +6,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5001',
-        changeOrigin: true
+        target: 'https://hms-backend-19nq.onrender.com',
+        changeOrigin: true,
+        secure: false,
       }
     }
   }
