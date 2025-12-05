@@ -173,7 +173,7 @@ export default function App() {
         <NavLink to="/patient">Patient</NavLink>
         <NavLink to="/employee">Employee</NavLink>
       </nav>
-
+ 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
