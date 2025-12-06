@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Line } from "react-chartjs-2";
 
-// IMPORTANT: Chart.js requires registration
+
 import {
   Chart as ChartJS,
   LineElement,
@@ -16,7 +16,7 @@ ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 export default function AnalyticsDashboard() {
   const [data, setData] = useState(null);
 
-  const API = import.meta.env.VITE_API_URL;   // <-- REQUIRED FOR DEPLOYMENT
+  const API = import.meta.env.VITE_API_URL;   
 
   useEffect(() => {
     axios
