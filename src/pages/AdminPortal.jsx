@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function AdminPortal() {
   const [patients, setPatients] = useState([]);
-  const API = import.meta.env.VITE_API_URL;   // <-- IMPORTANT
+  const API = import.meta.env.VITE_API_URL;   
 
   useEffect(() => {
     axios.get(`${API}/api/patients`)
