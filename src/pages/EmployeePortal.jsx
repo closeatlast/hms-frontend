@@ -2,25 +2,25 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function EmployeePortal() {
-  const employeeId = 5; // example logged-in employee
+  const employeeId = 5; 
 
   const [employees, setEmployees] = useState([]);
   const [schedule, setSchedule] = useState([]);
   const [resources, setResources] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API = import.meta.env.VITE_API_URL; // your backend
+  const API = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     async function loadPortalData() {
       try {
-        // Load ALL employees (includes Doctor, Nurse, Receptionist)
+        
         const employeeRes = await axios.get(`${API}/api/employees`);
 
-        // Load schedule
+        
         const scheduleRes = await axios.get(`${API}/api/schedule/${employeeId}`);
 
-        // Load resources
+      
         const resourcesRes = await axios.get(`${API}/api/resources`);
 
         setEmployees(employeeRes.data);
@@ -38,7 +38,7 @@ export default function EmployeePortal() {
 
   if (loading) return <p>Loading employee portal...</p>;
 
-  // Separate employee types
+  
   const doctors = employees.filter(e => e.Type === "Doctor");
   const nurses = employees.filter(e => e.Type === "Nurse");
   const receptionists = employees.filter(e => e.Type === "Receptionist");
