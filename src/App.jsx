@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 import axios from "axios";
 
-// Use backend URL from .env
+
 const API = import.meta.env.VITE_API_URL;
 
-// ------------------ HOME ------------------
+
 const Home = () => {
   const [health, setHealth] = useState(null);
 
@@ -26,7 +26,7 @@ const Home = () => {
   );
 };
 
-// ------------------ ADMIN ------------------
+
 const Admin = () => {
   const [patients, setPatients] = useState([]);
 
@@ -43,7 +43,7 @@ const Admin = () => {
   );
 };
 
-// ------------------ PATIENT VIEW ------------------
+
 const Patient = () => {
   const [patients, setPatients] = useState([]);
 
@@ -68,9 +68,9 @@ const Patient = () => {
   );
 };
 
-// ------------------ EMPLOYEE PORTAL (FIXED) ------------------
+
 const Employee = () => {
-  const employeeId = 5; // Example logged-in employee
+  const employeeId = 5; 
 
   const [employees, setEmployees] = useState([]);
   const [schedule, setSchedule] = useState([]);
@@ -94,7 +94,7 @@ const Employee = () => {
     loadEmployeeData();
   }, []);
 
-  // Separate roles
+
   const doctors = employees.filter((e) => e.Type === "Doctor");
   const nurses = employees.filter((e) => e.Type === "Nurse");
   const receptionists = employees.filter((e) => e.Type === "Receptionist");
@@ -154,7 +154,7 @@ const Employee = () => {
   );
 };
 
-// ------------------ MAIN APP ------------------
+
 export default function App() {
   return (
     <div>
