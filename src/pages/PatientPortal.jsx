@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function PatientPortal() {
-  const patientId = 1; // replace once login system exists
+  const patientId = 1; 
 
   const [visits, setVisits] = useState([]);
   const [bills, setBills] = useState([]);
   const [recs, setRecs] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API = import.meta.env.VITE_API_URL; // REQUIRED for deployment
+  const API = import.meta.env.VITE_API_URL; 
 
   useEffect(() => {
     async function loadPatientData() {
